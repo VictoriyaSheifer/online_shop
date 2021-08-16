@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import othr style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@600&display=swap');
+body{
+    background-image: url("./assets/img/5328478.jpg");
+    background-size: 45vh;
+}
+.table-container{
+    background-color: #f1ede6;
+    border-radius: 50px;
+    box-shadow: rgba(78, 76, 76, 0.719) 3px 2px 3px 2px;
+    height: 61vh;
+}
+.title{
+    font-family: 'Encode Sans SC', sans-serif;
+    font-size: 5vh;
+    color: #333333;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
