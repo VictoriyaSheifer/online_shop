@@ -26,7 +26,7 @@ const Orders = require('./models/OrdersModel');
 const Categories = require('./models/CategoriesModel');
 const CartItem = require('./models/CartItemsModel');
 
-Users.hasMany(ShoppingCart);
+Users.hasMany(ShoppingCart);  
 Users.hasMany(Orders);
 ShoppingCart.hasMany(Orders);
 ShoppingCart.hasMany(CartItem);

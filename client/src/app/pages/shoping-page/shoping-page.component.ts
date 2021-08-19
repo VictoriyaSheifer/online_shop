@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-shoping-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public settingsService: SettingsService) { }
+
+  @Input() student: string = "";
 
   ngOnInit(): void {
+    this.settingsService.currentPage = 3;
   }
 
 }

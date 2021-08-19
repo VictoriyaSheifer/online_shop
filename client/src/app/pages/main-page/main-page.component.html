@@ -1,0 +1,6 @@
+<app-regular-page *ngIf="userService._loged_in_user.id === 0" ></app-regular-page>
+<app-loged-in-page *ngIf="userService._loged_in_user.id !== 0"></app-loged-in-page>
+
+<!-- <app-home-nav></app-home-nav>
+<app-log-in></app-log-in>
+<router-outlet></router-outlet> -->

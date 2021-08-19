@@ -1,0 +1,60 @@
+.icons-container{
+    position: fixed;
+    top: 1vh;
+    right: 1vw;
+    height: auto;
+    display: flex;
+}
+
+#log-out,#register-icon,#log-in-icon{
+width: 2.5vw;
+top: 1vh;
+right: 1vw;
+position: fixed;
+cursor: pointer;
+}
+
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.reveal{
+    animation: reveal 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.reveal2{
+    animation: reveal2 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+// #register-icon,#log-in-icon{
+//     opacity: 0;
+// }
+
+#register-icon{
+    transform: translateX(-4vw);
+}
+
+// #log-in-icon{
+//     transform: translateX(-8vw);
+// }
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+      }
+      100% {
+            opacity: 1;
+      }
+}
+@keyframes reveal2 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      100% {
+            transform: translateX(-50px);
+            opacity: 1;
+      }
+}

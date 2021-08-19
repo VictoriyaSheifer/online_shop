@@ -1,0 +1,78 @@
+<div class="reg-cont">
+    <div class="container first-step-register "  [class]="userService.first_step_register">
+        <div class="row reg-header-container">
+            <h2>Sign up Here </h2>
+            <p>
+            Enter your details below and enjoy a special and varied list of fresh products with 24h delivery to your doorstep.
+            </p>
+        </div>
+    <div class="needs-validation">
+    <div class="form-row justify-content-center">
+        <div class="form-group col-5">
+        <label htmlFor="email-registerinput">Email</label>
+        <input [(ngModel)]="userService._user.email" type="mail" name="email" class="form-control" id="email-registerinput"  placeholder="Email"/>
+        </div>
+    </div>
+    <div class="form-row justify-content-center">
+        <div class="form-group col-5">
+        <label htmlFor="password-registerinput">Password</label>
+        <input [(ngModel)]="userService._user.password" name="password" type="password" class="form-control" id="password-registerinput" placeholder="Password"/>
+        </div>
+    </div>
+    <div class="form-row justify-content-center">
+        <div class="form-group col-5">
+        <label htmlFor="confirmPassword-registerinput">Confirm Password</label>
+        <input [(ngModel)]="userService._confirmPass" name="confirmPassword" type="password" class="form-control" id="confirmPassword-registerinput" placeholder="Confirm Password" autoComplete="off"/>
+        </div>
+    </div>
+    <div class="form-row justify-content-center">
+        <div class="form-group col-1">
+            <button  type="button" class="btn btn-success" (click)="userService.onSubmitFirstStep()">Next Step</button>
+        </div>
+        <div class="form-group col-1">
+            <button  routerLink="/" type="button" class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    
+    <div class="container second-step-register" [class]="userService.second_step_register">
+        <div class="row reg-header-container">
+            <h2>Moving on ...</h2>
+            <p>
+            Please fill in the rest of the details relevant to you so that we can provide you with the best service.
+            </p>
+        </div>
+    <div class="needs-validation">
+    <div class="form-row justify-content-center">
+        <div class="form-group col-5">
+        <label htmlFor="first_name-registerinput">First Name</label>
+        <input [(ngModel)]="userService._user.first_name" type="text" class="form-control" id="first_name-registerinput"  placeholder="First Name"/>
+        </div>
+        <div class="form-group col-5">
+            <label htmlFor="email-registerinput">Last Name</label>
+            <input [(ngModel)]="userService._user.last_name" type="text" class="form-control" id="last_name-registerinput"  placeholder="Last Name"/>
+        </div>
+    </div>
+    <div class="form-row justify-content-center">
+        <div class="form-group col-5">
+        <label htmlFor="password-registerinput">City</label>
+        <input [(ngModel)]="userService._user.city" type="text" class="form-control" id="city-registerinput" placeholder="City"/>
+        </div>
+        <div class="form-group col-5">
+        <label htmlFor="confirmPassword-registerinput">Street</label>
+        <input [(ngModel)]="userService._user.street" type="text" class="form-control" id="street-registerinput" placeholder="Street"/>
+        </div>
+    </div>
+    <div class="form-row justify-content-center">
+        <div class="form-group col-1">
+            <button type="button" class="btn btn-success" (click)="userService.onSubmit()">Submit</button>
+        </div>
+        <div class="form-group col-1">
+            <button  routerLink="/" type="button" class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
