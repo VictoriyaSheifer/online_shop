@@ -19,6 +19,10 @@ import { LogedInPageComponent } from './pages/loged-in-page/loged-in-page.compon
 import { RegularPageComponent } from './pages/regular-page/regular-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { LogedInNavComponent } from './components/loged-in-nav/loged-in-nav.component';
+import { UsersOrdersPageComponent } from './pages/users-orders-page/users-orders-page.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ProductItemCardComponent } from './pages/product-items-list/product-item-card/product-item-card.component';
+import { ProductItemsListComponent } from './pages/product-items-list/product-items-list.component';
 
 
 @NgModule({
@@ -38,6 +42,10 @@ import { LogedInNavComponent } from './components/loged-in-nav/loged-in-nav.comp
     RegularPageComponent,
     MainPageComponent,
     LogedInNavComponent,
+    UsersOrdersPageComponent,
+    CartComponent,
+    ProductItemCardComponent,
+    ProductItemsListComponent,
   ],
   imports: [
     BrowserModule,

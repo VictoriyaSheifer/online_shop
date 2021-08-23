@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-loged-in-nav',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogedInNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public userService: UsersService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }

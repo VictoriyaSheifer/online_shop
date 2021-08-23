@@ -19,9 +19,11 @@ export class LogedInPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("this._loged_in_user = new User();", this.userService._loged_in_user)
-    if (this.userService._loged_in_user.id === 0) {
+    console.log("loged_in_user", this.userService._loged_in_user)
+    if (this.userService._loged_in_user.id == 0) {
       this.router.navigate(['/']);
+
+      console.log("_user_loged_in_page_number ::", this.userService._user_loged_in_page_number)
     }
   }
 

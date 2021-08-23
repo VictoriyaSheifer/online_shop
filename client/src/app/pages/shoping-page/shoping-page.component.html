@@ -1,1 +1,11 @@
-<h1>this is shopping page</h1>
+<nav class="navbar navbar-expand-lg  navbar-dark light-gray-bg">
+    <div class="navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"  *ngFor="let category of productsService._categories; let i = index">
+          <a class="nav-link secondery-nav-link"  (click)="productsService.updateCategory(category)">{{category.name}}</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<app-product-items-list></app-product-items-list>

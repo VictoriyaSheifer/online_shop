@@ -11,6 +11,15 @@ exports.getAllProducts = async (req, res) => {
     })
 }
 
+// get all Products by category
+exports.getProductsByCategory = async (req, res) => {
+    await Products.findAll({where: {categoryId: req.body.id }}).then(result => {
+        res.send(result)
+    }).catch(err => {
+        res.send("error load products by category" + JSON.stringify(err))
+    })
+}
+
 // insert a new Products
 exports.insertProducts = async (req, res) => {
     await Products.create(req.body).then(result => {

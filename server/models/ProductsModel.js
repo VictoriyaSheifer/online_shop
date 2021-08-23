@@ -16,6 +16,10 @@ const Products = sequelize.define('products', {
         type: Sequelize.INTEGER(11),
         defaultValue: 0
     },
+    discount_price: {
+        type: Sequelize.INTEGER(11),
+        defaultValue: 0
+    },
     image: {
         type: Sequelize.STRING,
         defaultValue:"defult.jpg"

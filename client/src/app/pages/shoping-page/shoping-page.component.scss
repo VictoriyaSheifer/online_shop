@@ -1,0 +1,16 @@
+.light-gray-bg{
+    background-color: #d1dadd;
+    
+}
+.secondery-nav-link{
+    color: rgb(75, 94, 110) !important;
+    cursor: pointer;
+    border-radius: 20px; 
+    &:hover{
+        background-color: #f3f5f6e8;
+        
+    }
+}
+.chosen-category{
+    background-color: #e6f2f6;
+}

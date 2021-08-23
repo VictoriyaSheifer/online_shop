@@ -7,3 +7,10 @@
     background-color: #ffffff5e;
     background-blend-mode: lighten;
     }
+    
+.logo-container{
+    background-image: url("http://www.localhost:5000/carousel_commercials/logo.png");
+    height: 26vh;
+    width: 35vh;
+    background-size: cover;
+}

@@ -62,7 +62,10 @@ app.use(cors(corsOptions))
 /* ************************ */
 
 const ProductsRoute = require('./routes/ProductsRoute');
-app.use("/Products", ProductsRoute);
+app.use("/products", ProductsRoute);
+
+const CategoriesRoute = require('./routes/CategoriesRoute');
+app.use("/categories", CategoriesRoute);
 
 const UsersRoute = require('./routes/UsersRoute');
 app.use("/users", UsersRoute);

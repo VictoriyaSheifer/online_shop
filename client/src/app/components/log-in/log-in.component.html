@@ -37,7 +37,6 @@
               </button>
         </div>
         <div class="modal-body">
-        <form>
         <div class="form-group">
             <label htmlFor="useremaill">Email</label>
             <input type="email" [(ngModel)]="userService._log_in_email" id="useremaill" [class]="userService.email_validation_class" aria-describedby="emailHelp" placeholder="Enter email.."/>
@@ -47,7 +46,7 @@
         </div>
         <div class="form-group">
             <label htmlFor="userpassword">Password</label>
-            <input type="password" [(ngModel)]="userService._log_in_pass" class="form-control" placeholder="Enter password.." />
+            <input type="password" [(ngModel)]="userService._log_in_pass" [class]="userService.pass_validation_class" placeholder="Enter password.." />
             <div id="validationServer03Feedback" class="invalid-feedback">
                 This passord is not correct!
             </div>
@@ -56,7 +55,6 @@
             <label htmlFor="exampleInputPassword1">Not a user ?</label>
             <a routerLink="register-page/" data-dismiss="modal" aria-label="Close">Click Here to Register!</a>
         </div>
-        </form>
         </div>
         <div class="modal-footer">
             <button type="button"  class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Cancel</button>
