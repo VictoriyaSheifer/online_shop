@@ -20,20 +20,10 @@ exports.CheckCredentials = async (req, res) => {
     })
 }
 
-
 exports.insertUser = async (req, res) => {
     await Users.create(req.body).then(result => {
         res.send(result)
     }).catch(err => {
         res.send("error load manufacturer")
     });
-}
-
-exports.getAllUsers = async (req, res) => {
-    await Users.findAll().then(result => {
-        console.log(result);
-        res.send(result)
-    }).catch(err => {
-        res.send("error load getAllUsers" + JSON.stringify(err))
-    })
 }

@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="cart-item-container">
+        <div class="front-container">
+            <i class="fas fa-times delete-cart-item" (click)="this.cartService.deleteCartItem(d.id)"></i> 
+            <i class="fas fa-plus-circle plus-cart-item" (click)="this.cartService.updateQnt(d.id,1)"></i>
+            <i class="fas fa-minus-circle minus-cart-item" (click)="this.cartService.updateQnt(d.id,(-1))"></i>
+        </div>
+        <div class="cart-item-img-container">
+            <img class="cart-item-img" src="http://www.localhost:5000/products/{{d.product.image}}" alt="{{d.product.name}}">
+        </div>
+        <div class="cart-item-body">
+            <h6>{{d.product.name}}</h6>
+            <p style="margin-bottom: 0px;" class="price-cart-item">{{d.product.discount_price === 0  ? d.product.price : d.product.price}}₪</p>
+            <p class="qnt-cart-item">Qty:{{d.qnt}}</p>
+        </div>
+    </div>
+</div>

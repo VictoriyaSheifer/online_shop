@@ -5,6 +5,5 @@ const UserController = require('../controllers/UsersController')
 router.post('/insertUser', UserController.insertUser);
 router.get('/CheckIfExist', UserController.CheckIfExist);
 router.post('/CheckCredentials', UserController.CheckCredentials);
-router.get('/getAllUsers', UserController.getAllUsers);
 
 module.exports = router;

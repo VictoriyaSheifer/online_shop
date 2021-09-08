@@ -1,11 +1,78 @@
-<nav class="navbar navbar-expand-lg  navbar-dark light-gray-bg">
-    <div class="navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"  *ngFor="let category of productsService._categories; let i = index">
-          <a class="nav-link secondery-nav-link"  (click)="productsService.updateCategory(category)">{{category.name}}</a>
-        </li>
-      </ul>
-    </div>
+<div [class]="!userService._is_a_menager ? 'shoping-side-container' : 'menager-shoping-side-container'">
+<nav class="navbar navbar-expand-lg navbar-light light-gray-bg">
+  <div class="form-inline add-product-container">
+    <button class="search-bnt" type="button" *ngIf="userService._is_a_menager" (click)="productsService.addProduct()" data-toggle="modal" data-target="#add-product"><i class="fas fa-plus"></i> Product </button>
+  </div>
+  <div class="navbar-collapse secondery-nav">
+    <ul class="cat-navbar">
+      <li class="category-item" [class]="productsService._chosen_category === category ? 'activecategory' : null"   *ngFor="let category of productsService._categories; let i = index">
+        <a  (click)="productsService.updateCategory(category);productsService._searchProuductInput=''">{{category.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="form-inline search-container">
+    <input class="form-control search-input" [(ngModel)]="productsService._searchProuductInput" type="search" placeholder="Search" aria-label="Search" (ngModelChange)="productsService.onChangeProductSearch()">
+    <button class="search-bnt" type="button"><i class="fas fa-search"></i></button>
+  </div>
 </nav>
-
 <app-product-items-list></app-product-items-list>
+</div>
+<div class="cart-side-container" *ngIf="!userService._is_a_menager">
+  <app-cart></app-cart>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="add-product" tabindex="-1" role="dialog" aria-labelledby="order_modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{productsService.meneger_modal_title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"  (click)="productsService.cleanModalinputs()">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+      <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+      </div>
+      <input type="text" [(ngModel)]="productsService._menager_product.name" class="form-control" [class]="productsService.validate_name" aria-label="Default" aria-describedby="validate_nameFeedback" />
+      <div id="validate_nameFeedback" class="invalid-feedback">Please enter product name.</div>
+      </div>
+      <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+      </div>
+      <textarea type="text" [(ngModel)]="productsService._menager_product.description" class="form-control" [class]="productsService.validate_description" aria-label="Default" aria-describedby="validate_descriptionFeedback"></textarea>
+      <div id="validate_descriptionFeedback" class="invalid-feedback">Please enter a product description.</div>
+      </div>
+      <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Price</span>
+      </div>
+      <input type="number" [(ngModel)]="productsService._menager_product.price" class="form-control" [class]="productsService.validate_price" aria-label="Default" aria-describedby="validate_priceFeedback"  min="0" />
+      <div id="validate_priceFeedback" class="invalid-feedback">Please enter a price.</div>
+      </div>
+      <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Category</span>
+      </div>
+      <select [(ngModel)]="productsService._menager_product.categoryId" class="custom-select" id="inputGroupSelect01" [class]="productsService.validate_categoryId" aria-describedby="validate_categoryIdFeedback">
+          <option value="0" disabled selected>Select your Category</option>
+          <option *ngFor="let c of productsService._categories; let i = index" value={{c.id}}>{{c.name}}</option>
+      </select>
+      <div id="validate_categoryIdFeedback" class="invalid-feedback">Please choose a category.</div>
+      </div>
+      <!-- <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <input type="file" id="img" name="img" accept="image/*" (change)="productsService.onFileChange($event)" [(ngModel)]="productsService._menager_product.image" />
+      </div>
+      </div> -->
+      </div>
+      <div class="modal-footer">
+          <button type="button" #addModalclose id="addModalclose" class="btn btn-secondary" data-dismiss="modal" (click)="productsService.cleanModalinputs()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="insertProducts()">Save changes</button>
+      </div>
+      </div>
+  </div>

@@ -13,11 +13,15 @@ const Products = sequelize.define('products', {
         allowNull: false
     },
     price: {
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.DOUBLE,
         defaultValue: 0
     },
+    description: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
     discount_price: {
-        type: Sequelize.INTEGER(11),
+        type: Sequelize.DOUBLE,
         defaultValue: 0
     },
     image: {

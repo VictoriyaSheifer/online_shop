@@ -1,1 +1,36 @@
-<p>users-orders-page works!</p>
+<div class="container">
+    <div class="order-content-container">
+        <i class="fas fa-arrow-circle-left" alt="go back" (click)="user._user_loged_in_page_number = 1"></i>
+        <div class="order-header-container">
+            <h1>Some of Your History With Us...</h1>
+            <p>In this page you can find a sum up for your previous orders here.</p>
+        </div>
+        <div class="order-product-list-container">
+            <div class="title-order-list">
+                <h2>Your Orders</h2>
+                <p>In this list are only the finished orders.</p>
+            </div>
+            <div class="orders-table-container" id="content" #content>
+                <table class="table table-cont">
+                  <thead>
+                    <tr>
+                      <th scope="col">Total Price</th>
+                      <th>Shippment date</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="tb-container">
+                    <tr *ngFor="let order of orders._all_orders">
+                      <td>{{order.total_price}}₪</td>
+                      <td>{{order.shippment_date}}</td>
+                      <td>{{order.createdAt.substr(0, 10)}}</td>
+                      <td>Done</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+    </div>
+    </div>

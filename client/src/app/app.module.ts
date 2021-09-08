@@ -10,7 +10,6 @@ import { ShopingPageComponent } from './pages/shoping-page/shoping-page.componen
 import { OrderPageComponent } from './pages/order-page/order-page.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { StatisticsComponent } from './pages/statistics/statistics.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HomeNavComponent } from './components/home-nav/home-nav.component';
@@ -23,6 +22,7 @@ import { UsersOrdersPageComponent } from './pages/users-orders-page/users-orders
 import { CartComponent } from './components/cart/cart.component';
 import { ProductItemCardComponent } from './pages/product-items-list/product-item-card/product-item-card.component';
 import { ProductItemsListComponent } from './pages/product-items-list/product-items-list.component';
+import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
 
 
 @NgModule({
@@ -34,7 +34,6 @@ import { ProductItemsListComponent } from './pages/product-items-list/product-it
     OrderPageComponent,
     LogInComponent,
     AboutUsComponent,
-    StatisticsComponent,
     CarouselComponent,
     HomeNavComponent,
     RegisterComponent,
@@ -46,6 +45,7 @@ import { ProductItemsListComponent } from './pages/product-items-list/product-it
     CartComponent,
     ProductItemCardComponent,
     ProductItemsListComponent,
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,

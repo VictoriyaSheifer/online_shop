@@ -8,7 +8,7 @@ export class ErrorsService {
     constructor() { }
 
     async errorHandeling(error: any) {
-        console.log("DEVELOPER_ERROR : ", error['ERROR'].DEVELOPER_ERROR, error['ERROR'].DISPLAY_ERROR)
+        //console.log("DEVELOPER_ERROR : ", error['ERROR'].DEVELOPER_ERROR, error['ERROR'].DISPLAY_ERROR)
         Swal.fire({
             text: error['ERROR'].DISPLAY_ERROR + " \n נסה שנית מאוחר יותר !!",
             icon: 'error',

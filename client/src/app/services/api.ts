@@ -9,18 +9,18 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createPostService(url: string, ob: any ) {
+  createPostService(url: string, ob: any) {
     return new Promise(async (resolve, reject) => {
       try {
-        const headers = new HttpHeaders({'Content-Type':'application/json'});
-        await this.httpClient.post(url, ob , {headers}).subscribe(data => {
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        await this.httpClient.post(url, ob, { headers }).subscribe(data => {
           resolve(data);
         }, error => {
-          console.log('oops', error, error.error)
+          //console.log('oops', error, error.error)
         });
       } catch (err) {
-        console.log("ERRORRR : ", err)
-        console.log(err);
+        //console.log("ERRORRR : ", err)
+        //console.log(err);
       }
     });
   }
@@ -32,11 +32,11 @@ export class ApiService {
         await this.httpClient.get(url).subscribe(data => {
           resolve(data);
         }, error => {
-          console.log('oops', error, error.error)
+          //console.log('oops', error, error.error)
         });
       } catch (err) {
-        console.log("ERRORRR : ", err)
-        console.log(err);
+        //console.log("ERRORRR : ", err)
+        //console.log(err);
       }
     });
   }

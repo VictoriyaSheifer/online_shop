@@ -19,11 +19,11 @@ export class RegularPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log("loged_in_user", this.userService._loged_in_user)
+    //console.log("loged_in_user", this.userService._loged_in_user)
     if (this.userService._loged_in_user.id === 0) {
       this.router.navigate(['/']);
     }
-    else{
+    else {
       this.router.navigate(['/loged-in']);
     }
   }

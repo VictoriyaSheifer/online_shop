@@ -9,6 +9,10 @@ const ShoppingCart = sequelize.define('shopping_cart', {
         allowNull: false,
         primaryKey: true,
     },
+    status: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
 });
 module.exports = ShoppingCart;
 

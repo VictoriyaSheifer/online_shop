@@ -11,6 +11,15 @@ exports.getAllProducts = async (req, res) => {
     })
 }
 
+// get all number of Products
+exports.getNumberOfProducts = async (req, res) => {
+    await Products.findAndCountAll().then(result => {
+        res.send(result)
+    }).catch(err => {
+        res.send("error load getAllProducts" + JSON.stringify(err))
+    })
+}
+
 // get all Products by category
 exports.getProductsByCategory = async (req, res) => {
     await Products.findAll({where: {categoryId: req.body.id }}).then(result => {

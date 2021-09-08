@@ -1,0 +1,29 @@
+.fas{
+cursor: pointer;
+}
+.add-prod-bnt{
+    border: none;
+    color: #fae6b1;
+    font-family: 'Bebas Neue', 'cursive';
+    background-color: #31515c;
+    border-radius: 20px;
+    padding: 1vh;
+    box-shadow: inset 1px 2px 6px #4a6c78, 2px 2px 1px #fae6b1;
+    width: 19%;
+    &:active{
+      box-shadow: inset 1px 2px 6px #4a6c7850, 1px 1px 1px #fae6b1b0;
+    }
+    .fa-cart-plus{
+        color: #fae6b1;
+    }
+}
+.product-img{
+  z-index: 1;
+}
+.edit-product{
+  z-index: 10;
+  position: absolute;
+  padding: 1vh;
+  font-size: 3vh;
+  color: #31515c;
+}

@@ -35,8 +35,7 @@ const Users = sequelize.define('users', {
     street: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-
+    }
 });
 module.exports = Users;
 

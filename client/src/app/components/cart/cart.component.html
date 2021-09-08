@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<!-- The sidebar -->
+<div class="sidebar" >
+    <div class="cart-header">
+<div class="row justify-content-center">
+    <h2 class="col-12" >Welcome Back {{userService._loged_in_user.first_name}}</h2>
+    <button class="search-bnt" type="button" (click)="cartService.deleteAllCartItemFromShoppingCart()"><i class="fas fa-trash"></i> clear cart</button>
+</div>
+    </div>
+    <div class="cart-body">
+        <div class="container">
+            <app-cart-item *ngFor="let item of cartService._cart_items" class="col-xl-3 col-lg-4 col-md-5 col-sm-10 col-xs-10" [d]="item"></app-cart-item>
+    </div>
+    </div>
+    <div class="cart-footer">
+    <div class="footer-container">
+        <div class="footer-price">
+            <p class="footer-price-text">
+                Total : {{this.cartService._total_price}}₪
+            </p></div>
+        <div class="footer-checkout-bnt">
+            <button class="checkout-bnt" (click)="cartService._cart_items.length > 0 ? userService._user_loged_in_page_number = 3 :null"> Checkout</button>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 .light-gray-bg{
     background-color: #d1dadd;
-    
+}
+.lighter-gray-bg{
+    background-color: #d1dadd4b;
 }
 .secondery-nav-link{
     color: rgb(75, 94, 110) !important;
@@ -13,4 +15,62 @@
 }
 .chosen-category{
     background-color: #e6f2f6;
+}
+.cart-side-container{
+width: 20vw;
+float: left;
+height: 70vh;
+}
+.shoping-side-container{
+    width: 78vw;
+    float: right;
+    height: 70vh;
+}
+.menager-shoping-side-container{
+    width: 80%;
+    height: 70vh;
+    justify-content: center;
+    margin: auto;
+}
+.search-input{
+    width: 70%;
+}
+
+.add-product-container{
+
+}
+.category-item{
+    font-family: 'Oswald', sans-serif;
+    width: 10vw;
+    cursor: pointer;
+    margin: 1vh;
+    padding: 1vh;
+    box-sizing: inherit;
+}
+.cat-navbar{
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+}
+.secondery-nav{
+    width:65%;
+    overflow-x: scroll;
+    ::-webkit-scrollbar {
+        height: 5px;
+      }
+}
+.activecategory{
+    background-color: #f9f9f9;
+    border-radius: 20px;
+}
+.search-container{
+    margin: 1vh;
+    padding: 1vh;
+    box-sizing: inherit;
+    justify-content: center;
+}
+
+.add_bnt{
+    border: none;
+    background-color: none;
 }

@@ -33,6 +33,7 @@ ShoppingCart.hasMany(CartItem);
 Products.hasMany(CartItem);
 Categories.hasMany(Products);
 
+CartItem.belongsTo(Products);
 /* ************************ */
 /*       Define sequelize   */
 /* ************************ */
@@ -70,6 +71,12 @@ app.use("/categories", CategoriesRoute);
 const UsersRoute = require('./routes/UsersRoute');
 app.use("/users", UsersRoute);
 
+const CartItemsRoute = require('./routes/CartItemsRoute');
+app.use("/cartItems", CartItemsRoute);
+
+const OrdersRoute = require('./routes/OrdersRoute');
+app.use("/orders", OrdersRoute);
+
 /* ************************ */
 /*       Upload image       */
 /* ************************ */
@@ -96,7 +103,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 app.post("/upload", upload.array("uploads[]", 12), function (req, res) {
-  console.log('files::::::::::::::::::', req.files);
+  //console.log('files::::::::::::::::::', req.files);
   res.send(req.files);
 });
 
@@ -111,9 +118,8 @@ app.use((req, res) => {
 sequelize.sync().then(result => {
     console.log("Connected DB !!")
     app.listen(5000);
-   
-}).catch(err => {
-    console.log("Error connected DB !!")
+   }).catch(err => {
+    console.log("Error connected DB !!" , err)
 })
 
 /* ************************ */
@@ -123,25 +129,20 @@ sequelize.sync().then(result => {
 //module.exports =  io;
 // This is what the socket.io syntax is like, we will work this later
 io.on('connection', (socket) => {
-    console.log('New client connected::::::::::::::')
+    //console.log('New client connected::::::::::::::')
 
     //update-vacation session
-    socket.on('update-vacation2', () => {
-        console.log('vacaion Changed to::::::::::::: ')
-        io.sockets.emit('update-vacation')
+    socket.on('update-product2', () => {
+        //console.log('vacaion Changed to::::::::::::: ')
+        io.sockets.emit('update-product')
     })
-    //delete session
-    socket.on('delete', () => {
-      console.log('delete Changed to::::::::::::: ')
-      io.sockets.emit('delete-vacation')
-  })
     socket.on("connect_error", (err) => {
-      console.log(`connect_error due to ${err.message}`);
+      //console.log(`connect_error due to ${err.message}`);
     });
     
     // disconnect is fired when a client leaves the server
     socket.on('disconnect', () => {
-        console.log('user disconnected')
+        //console.log('user disconnected')
     })
 })
 

@@ -21,9 +21,9 @@ const Orders = sequelize.define('orders', {
         allowNull: false
     },
     shippment_date: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
-        defaultValue: Sequelize.NOW
+        defaultValue: Sequelize.NOW,
     },
     card_number: {
         type: Sequelize.INTEGER(11),
